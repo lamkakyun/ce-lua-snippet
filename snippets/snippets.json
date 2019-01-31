@@ -1,5 +1,111 @@
 {
     /************************************************
+     * Cheat table
+     ************************************************/
+    "getAddressList":
+    {
+        "body": "getAddressList()",
+        "description": "Returns the cheat table Addresslist object",
+        "prefix": "getAddressList",
+        "scope": "source.lua"
+    },
+    "findTableFile":
+    {
+        "body": "findTableFile(${0:[filename]})",
+        "description": "Returns a TableFile stored in the cheat table",
+        "prefix": "findTableFile",
+        "scope": "source.lua"
+    },
+    "createTableFile":
+    {
+        "body": "createTableFile(${0:[filename]})",
+        "description": "Add a new file to a cheat table",
+        "prefix": "createTableFile",
+        "scope": "source.lua"
+    },
+    "loadTable":
+    {
+        "body": "loadTable(${0:[filename|memoryStream]})",
+        "description": " Loads a .ct or .cetrainer file or stream",
+        "prefix": "loadTable",
+        "scope": "source.lua"
+    },
+    "saveTable":
+    {
+        "body": "saveTable(${0:[filename]})",
+        "description": "Saves the current table",
+        "prefix": "saveTable",
+        "scope": "source.lua"
+    },
+    /************************************************
+     * Trainers, do not have document about trainer
+     ************************************************/
+    //  "registerEXETrainerFeature:":
+    // {
+    //     "body": "registerEXETrainerFeature:()",
+    //     "description": "Adds a new feature to the exe trainer generator window, and calls your function when the user builds an .exe trainer",
+    //     "prefix": "registerEXETrainerFeature:",
+    //     "scope": "source.lua"
+    // },
+    //  "unregisterEXETrainerFeature:":
+    // {
+    //     "body": "unregisterEXETrainerFeature()",
+    //     "description": "Unregisters the trainer feature",
+    //     "prefix": "unregisterEXETrainerFeature",
+    //     "scope": "source.lua"
+    // },
+
+    /************************************************
+     * Protection
+     ************************************************/
+     "activateProtection":
+     {
+         "body": "activateProtection()",
+         "description": "Prevents basic memory scanners from opening the cheat engine process",
+         "prefix": "activateProtection",
+         "scope": "source.lua"
+     },
+     "enableDRM":
+     {
+         "body": "enableDRM()",
+         "description": "Prevents normal memory scanners from reading the Cheat Engine process (kernelmode)",
+         "prefix": "enableDRM",
+         "scope": "source.lua"
+     },
+     "encodeFunction":
+     {
+         "body": "encodeFunction(${0:[function]})",
+         "description": "Converts a given function into an encoded string that you can pass on to decodeFunction",
+         "prefix": "encodeFunction",
+         "scope": "source.lua"
+     },
+     "decodeFunction":
+     {
+         "body": "decodeFunction({${0:[encodedString]})",
+         "description": " Converts an encoded string back into a function",
+         "prefix": "decodeFunction",
+         "scope": "source.lua"
+     },
+
+    /************************************************
+    * Scanning
+    ************************************************/
+    "AOBScan":
+    {
+        "body": "AOBScan({${0:...})",
+        "description": " Scans the currently opened process and returns a StringList object containing all the results",
+        "prefix": "AOBScan",
+        "scope": "source.lua"
+    },
+    "getCurrentMemscan":
+    {
+        "body": "getCurrentMemscan()",
+        "description": "Returns the currently active scan session as a MemScan object",
+        "prefix": "getCurrentMemscan",
+        "scope": "source.lua"
+    },
+
+    /************************************************
      * Process
      ************************************************/
     "createProcess":
@@ -42,6 +148,140 @@
         "body": "getProcessIDFromProcessName(${0:[processname]})",
         "description": "Searches the processlist for the given name and if found returns the processID. Returns nil if not found",
         "prefix": "getProcessIDFromProcessName",
+        "scope": "source.lua"
+    },
+    "openFileAsProcess":
+    {
+        "body": "openFileAsProcess(${1:[fileName]}${2:[is64bit]})",
+        "description": "Causes cheat engine to open the file with memory access as if it's a process",
+        "prefix": "openFileAsProcess",
+        "scope": "source.lua"
+    },
+    "saveOpenedFile":
+    {
+        "body": "saveOpenedFile()",
+        "description": "Saves the changes of the opened file",
+        "prefix": "saveOpenedFile",
+        "scope": "source.lua"
+    },
+    "setPointerSize":
+    {
+        "body": "setPointerSize()",
+        "description": "Sets the size cheat engine will deal with pointers in bytes. (Some 64-bit processes can only use 32-bit addresses)",
+        "prefix": "setPointerSize",
+        "scope": "source.lua"
+    },
+    "setAssemblerMode":
+    {
+        "body": "setAssemblerMode()",
+        "description": "Sets the assembler's bit size mode (0=32-bit, 1=64-bit)",
+        "prefix": "setAssemblerMode",
+        "scope": "source.lua"
+    },
+    "getProcesslist":
+    {
+        "body": "getProcesslist()",
+        "description": "Returns a processlist of the system",
+        "prefix": "getProcesslist",
+        "scope": "source.lua"
+    },
+    "getWindowlist":
+    {
+        "body": "getWindowlist()",
+        "description": "Returns the top-window list of the system",
+        "prefix": "getWindowlist",
+        "scope": "source.lua"
+    },
+    "pause":
+    {
+        "body": "pause()",
+        "description": "Pauses the current opened process",
+        "prefix": "pause",
+        "scope": "source.lua"
+    },
+    "unpause":
+    {
+        "body": "unpause()",
+        "description": "Resumes the current opened process",
+        "prefix": "unpause",
+        "scope": "source.lua"
+    },
+    "targetIs64Bit":
+    {
+        "body": "targetIs64Bit()",
+        "description": " Returns true if the target process is 64-bit, false if 32-bit",
+        "prefix": "targetIs64Bit",
+        "scope": "source.lua"
+    },
+    "enumModules":
+    {
+        "body": "enumModules()",
+        "description": "Returns a table containing information about each module in the current process, or the specified process ID",
+        "prefix": "enumModules",
+        "scope": "source.lua"
+    },
+    "closeRemoteHandle":
+    {
+        "body": "closeRemoteHandle()",
+        "description": " Closes the handle of a process",
+        "prefix": "closeRemoteHandle",
+        "scope": "source.lua"
+    },
+
+    /************************************************
+     * Threads
+     ************************************************/
+    "getCPUCount":
+    {
+        "body": "getCPUCount()",
+        "description": "Returns the number of CPU's.",
+        "prefix": "getCPUCount",
+        "scope": "source.lua"
+    },
+    "getThreadlist":
+    {
+        "body": "getThreadlist(${0:[StringList]})",
+        "description": " Fills a List object with the threadlist of the currently opened process",
+        "prefix": "getThreadlist",
+        "scope": "source.lua"
+    },
+    "inMainThread":
+    {
+        "body": "inMainThread()",
+        "description": " Returns true if the current code is running inside the main thread (6.4+)",
+        "prefix": "inMainThread",
+        "scope": "source.lua"
+    },
+    "synchronize":
+    {
+        "body": "synchronize()",
+        "description": "Calls the given function from the main thread. Returns the return value of the given function",
+        "prefix": "synchronize",
+        "scope": "source.lua"
+    },
+    "queue":
+    {
+        "body": "queue()",
+        "description": "Calls the given function from the main thread. Does not wait for the result",
+        "prefix": "queue",
+        "scope": "source.lua"
+    },
+    "checkSynchronize":
+    {
+        "body": "checkSynchronize()",
+        "description": "Call this from an infinite loop in the main thread when using threading and synchronize calls",
+        "prefix": "checkSynchronize",
+        "scope": "source.lua"
+    },
+
+     /************************************************
+      * Handles
+      ************************************************/
+    "getHandleList":
+    {
+        "body": "getHandleList()",
+        "description": "Returns a table with all the handles in the system",
+        "prefix": "getHandleList",
         "scope": "source.lua"
     },
     /************************************************
