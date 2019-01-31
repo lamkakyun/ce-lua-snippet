@@ -1,0 +1,87 @@
+{
+    /************************************************
+     * Process
+     ************************************************/
+    "createProcess":
+    {
+        "body": "createProcess(${0:[path]})",
+        "description": "Creates a process with or without debugging",
+        "prefix": "createProcess",
+        "scope": "source.lua"
+    },
+    "openProcess":
+    {
+        "body": "openProcess(${0:[process_id|precess_name]})",
+        "description": "Causes cheat engine to open the given processname or id",
+        "prefix": "openProcess",
+        "scope": "source.lua"
+    },
+    "onOpenProcess":
+    {
+        "body": "onOpenProcess(${0:[process_id]})",
+        "description": "Called by CE when it opens a process (userdefined)",
+        "prefix": "onOpenProcess",
+        "scope": "source.lua"
+    },
+    "getForegroundProcess":
+    {
+        "body": "getForegroundProcess()",
+        "description": "Returns the process ID of the process that is currently on top",
+        "prefix": "getForegroundProcess",
+        "scope": "source.lua"
+    },
+    "getOpenedProcessID":
+    {
+        "body": "getOpenedProcessID()",
+        "description": "Returns the currently opened process",
+        "prefix": "getOpenedProcessID",
+        "scope": "source.lua"
+    },
+    "getProcessIDFromProcessName":
+    {
+        "body": "getProcessIDFromProcessName(${0:[processname]})",
+        "description": "Searches the processlist for the given name and if found returns the processID. Returns nil if not found",
+        "prefix": "getProcessIDFromProcessName",
+        "scope": "source.lua"
+    },
+    /************************************************
+     * Addresses
+     ************************************************/
+    "getAddress":
+    {
+        "body": "getAddress(${0:[AddressString]})",
+        "description": "Returns the address of a symbol. Can be a modulename or an export",
+        "prefix": "getAddress",
+        "scope": "source.lua"
+    },
+    /************************************************
+     * Reading
+     ************************************************/
+    "readInteger":
+    {
+        "body": "readInteger(${0:[Address]})",
+        "description": "Reads a 32-bit integer from the specified address.",
+        "prefix": "readInteger",
+        "scope": "source.lua"
+    },
+    /************************************************
+     * Writing
+     ************************************************/
+    "writeInteger":
+    {
+        "body": "writeInteger(${0:[Address]})",
+        "description": "Writes a 32-bit integer to the specified address. Returns true on success.",
+        "prefix": "writeInteger",
+        "scope": "source.lua"
+    },
+    /************************************************
+     * Cheat Engine
+     ************************************************/
+    "getCEVersion":
+    {
+        "body": "getCEVersion()",
+        "description": "Returns a floating point value specifying the version of cheat engine",
+        "prefix": "getCEVersion",
+        "scope": "source.lua"
+    }
+}

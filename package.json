@@ -1,0 +1,26 @@
+{
+    "name": "ce-lua-snippet",
+    "displayName": "ce_lua_snippet",
+    "description": "lua snippet for cheat engine",
+    "version": "0.0.1",
+    "license": "MIT",
+    "publisher": "lamkakyun",
+    "engines": {
+        "vscode": "^0.10.1"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "lua",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/lamkakyun/vs-ce-lua-snippet"
+  	}   
+}
