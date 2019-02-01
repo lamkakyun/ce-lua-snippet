@@ -40,20 +40,20 @@
     /************************************************
      * Trainers, do not have document about trainer
      ************************************************/
-    //  "registerEXETrainerFeature:":
-    // {
-    //     "body": "registerEXETrainerFeature:()",
-    //     "description": "Adds a new feature to the exe trainer generator window, and calls your function when the user builds an .exe trainer",
-    //     "prefix": "registerEXETrainerFeature:",
-    //     "scope": "source.lua"
-    // },
-    //  "unregisterEXETrainerFeature:":
-    // {
-    //     "body": "unregisterEXETrainerFeature()",
-    //     "description": "Unregisters the trainer feature",
-    //     "prefix": "unregisterEXETrainerFeature",
-    //     "scope": "source.lua"
-    // },
+     "registerEXETrainerFeature:":
+    {
+        "body": "registerEXETrainerFeature:()",
+        "description": "Adds a new feature to the exe trainer generator window, and calls your function when the user builds an .exe trainer",
+        "prefix": "registerEXETrainerFeature:",
+        "scope": "source.lua"
+    },
+     "unregisterEXETrainerFeature:":
+    {
+        "body": "unregisterEXETrainerFeature()",
+        "description": "Unregisters the trainer feature",
+        "prefix": "unregisterEXETrainerFeature",
+        "scope": "source.lua"
+    },
 
     /************************************************
      * Protection
@@ -294,6 +294,138 @@
         "prefix": "getAddress",
         "scope": "source.lua"
     },
+    "getAddressSafe":
+    {
+        "body": "getAddressSafe(${0:[AddressString]})",
+        "description": "Returns the address of a symbol, or nil if not found. Similar to getAddress when errorOnLookup is false, but returns nil instead",
+        "prefix": "getAddressSafe",
+        "scope": "source.lua"
+    },
+    "getNameFromAddress":
+    {
+        "body": "getNameFromAddress(${0:[address]})",
+        "description": "Returns the given address in string form, returning the symbol representation if possible",
+        "prefix": "getNameFromAddress",
+        "scope": "source.lua"
+    },
+    "registerSymbol":
+    {
+        "body": "registerSymbol(${1:[symbolname]}${2:[address]})",
+        "description": "Assign the specified symbolname to an address",
+        "prefix": "registerSymbol",
+        "scope": "source.lua"
+    },
+    "unregisterSymbol":
+    {
+        "body": "unregisterSymbol(${0:[symbolname]})",
+        "description": "Remove the name from the address",
+        "prefix": "unregisterSymbol",
+        "scope": "source.lua"
+    },
+    "getSymbolInfo":
+    {
+        "body": "getSymbolInfo()",
+        "description": " Returns a table as defined by the SymbolList class object (module name, search key, address, size)",
+        "prefix": "getSymbolInfo",
+        "scope": "source.lua"
+    },
+    "reinitializeSymbolhandler":
+    {
+        "body": "reinitializeSymbolhandler()",
+        "description": "Reinitializes the symbolhandler. E.g when new modules have been loaded",
+        "prefix": "reinitializeSymbolhandler",
+        "scope": "source.lua"
+    },
+    "inModule":
+    {
+        "body": "inModule(${0:[address]})",
+        "description": "Returns true if the given address is inside a module",
+        "prefix": "inModule",
+        "scope": "source.lua"
+    },
+    "inSystemModule":
+    {
+        "body": "inSystemModule(${0:[address]})",
+        "description": "Returns true if the given address is inside a system module",
+        "prefix": "inSystemModule",
+        "scope": "source.lua"
+    },
+    "getModuleSize":
+    {
+        "body": "getModuleSize(${0:[ModuleName]})",
+        "description": "Returns the size of a given module.",
+        "prefix": "getModuleSize",
+        "scope": "source.lua"
+    },
+    "errorOnLookupFailure":
+    {
+        "body": "errorOnLookupFailure(${0:[state]})",
+        "description": " Set whether address lookups will throw errors, or just return 0.",
+        "prefix": "errorOnLookupFailure",
+        "scope": "source.lua"
+    },
+    "registerSymbolLookupCallback":
+    {
+        "body": "registerSymbolLookupCallback()",
+        "description": " Set whether address lookups will throw errors, or just return 0.",
+        "prefix": "registerSymbolLookupCallback",
+        "scope": "source.lua"
+    },
+    "unregisterSymbolLookupCallback":
+    {
+        "body": "unregisterSymbolLookupCallback()",
+        "description": "Removes the callback",
+        "prefix": "unregisterSymbolLookupCallback",
+        "scope": "source.lua"
+    },
+    "registerAddressLookupCallback":
+    {
+        "body": "registerAddressLookupCallback()",
+        "description": "Registers a function to be called when the name of an address is requested",
+        "prefix": "registerAddressLookupCallback",
+        "scope": "source.lua"
+    },
+    "unregisterAddressLookupCallback":
+    {
+        "body": "unregisterAddressLookupCallback()",
+        "description": "Removes the callback",
+        "prefix": "unregisterAddressLookupCallback",
+        "scope": "source.lua"
+    },
+    "reinitializeDotNetSymbolhandler":
+    {
+        "body": "reinitializeDotNetSymbolhandler()",
+        "description": "Reinitializes only the DotNet part of the symbol list",
+        "prefix": "reinitializeDotNetSymbolhandler",
+        "scope": "source.lua"
+    },
+
+    /************************************************
+     * Memory
+     ************************************************/
+    "allocateMemory":
+    {
+        "body": "allocateMemory()",
+        "description": "Allocates some memory into the target process",
+        "prefix": "allocateMemory",
+        "scope": "source.lua"
+    },
+    "deAlloc":
+    {
+        "body": "deAlloc()",
+        "description": "Frees allocated memory",
+        "prefix": "deAlloc",
+        "scope": "source.lua"
+    },
+    "allocateSharedMemory":
+    {
+        "body": "allocateSharedMemory()",
+        "description": "Creates a shared memory object of the given size if it doesn't exist yet",
+        "prefix": "allocateSharedMemory",
+        "scope": "source.lua"
+    },
+
+
     /************************************************
      * Reading
      ************************************************/
